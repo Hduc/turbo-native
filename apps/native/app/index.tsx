@@ -1,18 +1,36 @@
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Button } from "@repo/ui";
+import { UAccordion, UAccordionSectionProps, UButton } from "uipm";
 
+const section: UAccordionSectionProps[] = [
+  {
+    icon: 'heart',
+    title: 'Accordion Header One',
+    content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+  },
+  {
+    icon: 'star',
+    title: 'Accordion Header Two',
+    content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+  },
+  {
+    icon: 'bookmark',
+    title: 'Accordion Header Three',
+    content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+  },
+]
 export default function Native() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Native</Text>
-      <Button
+      <UButton
         onClick={() => {
           console.log("Pressed!");
           alert("Pressed!");
         }}
         text="Boop"
       />
+      <UAccordion sections={section} />
       <StatusBar style="auto" />
     </View>
   );

@@ -1,14 +1,17 @@
 "use client";
 
-import { Button } from "@repo/ui";
-
-import styles from "../styles/index.module.css";
+import { Button } from "uipm";
 
 export default function Web() {
   return (
-    <div className={styles.container}>
-      <h1>Web</h1>
-      <Button onClick={() => console.log("Pressed!")} text="Boop" />
+    <div >
+      <Button onPress={() => console.log("Pressed!")} title="Boop" />
+
+      <div className="grid grid-flow-col grid-rows-3 gap-4">
+        <div className="row-span-3 ...">01</div>
+        <div className="col-span-2 ...">02</div>
+        <div className="col-span-2 row-span-2 ...">03</div>
+      </div>
     </div>
   );
 }
